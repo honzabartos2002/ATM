@@ -12,4 +12,9 @@ Klikněte na "Attach a database file" a pomocí tlačítka "browse" vyberte soub
 
 Do "Logical name" zkopírujte: AtmData
 
+Stikněte "Ok"
+
+Klikněte pravým tlačítkem myši na AtmData.mdf a vyberte možnost "Close Connection"
+
+
 Nyní projekt můžete spustit, ale pokud by přece jen byl nějaký problém tak se můžete podívat na všechny funkce zde: https://www.youtube.com/watch?v=-0YBnBURwfw
