@@ -1,0 +1,45 @@
+﻿<Page x:Class="ATMSW.Invoice"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ATMSW"
+      mc:Ignorable="d" 
+      d:DesignHeight="1056" d:DesignWidth="816"
+      Title="Invoice" WindowHeight="1056" WindowWidth="816" Background="White">
+    <Grid x:Name="print" Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="BB - Bartoš Bank" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="30" FontWeight="Bold" Background="White" Foreground="#FFF17710"></Label>
+        <Label Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="20" Content="Bankomat: 2291"></Label>
+        <Label Name="datetimeLabel" Content="" FontSize="20" HorizontalAlignment="Right" Margin="0,0,5,0"></Label>
+        
+        
+        
+        <StackPanel Orientation="Horizontal" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Label Content="Klient: " FontSize="20"></Label>
+            <Label Name="clientLabel" FontSize="20" Content="Jan Novotný"></Label>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Label Content="Z účtu: " FontSize="20"></Label>
+            <Label Name="cardnumberLabel" FontSize="20" Content="1234123412341234"></Label>
+        </StackPanel>
+        
+        <Label Content="Výběr hotovosti v hodnotě" Grid.Row="4" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Top"></Label>
+        <StackPanel Orientation="Horizontal" Grid.Row="4" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,18,0,0">
+            <Label Name="amountLabel" Content="2000" FontSize="20" ></Label>
+            <Label Content="CZK" FontSize="20" ></Label>
+        </StackPanel>
+        
+        <Label Content="Transakce byla úspěšná" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Margin="0,20,0,0"></Label>
+        <Label Content="Děkujeme" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Margin="0,45,0,0"></Label>
+    </Grid>
+</Page>
