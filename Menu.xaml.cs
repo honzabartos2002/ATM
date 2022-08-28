@@ -15,14 +15,13 @@ namespace ATMSW
     {
         Invoice invoice = new Invoice();
         string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=AtmData;Integrated Security=True";
-        string pin;
-        bool menuNav;
+        bool menuNav; //změní funkci confirmButtonu. Jednoduše jsem zrecykloval jeden button na dvě využití
         string cardNum;
         
         public Menu(int id)
         {
             InitializeComponent();
-            Update(id);
+            Update(id); 
             inputPasswordBox.CommandBindings.Add(new CommandBinding(ApplicationCommands.Paste, Foo));
             
         }
@@ -33,25 +32,24 @@ namespace ATMSW
             e.Handled = regex.IsMatch(e.Text);
         }
 
-        private void Foo(object sender, ExecutedRoutedEventArgs e)
+        private void Foo(object sender, ExecutedRoutedEventArgs e) //zabraňuje uživateli do políčka cokoliv zkopírovaného vložit
         {
             e.Handled = true;
         }
 
-        private void Update(int id)
+        private void Update(int id) //metoda, která načte data z databáze a uloží je do patřičných míst
         {
             
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand("SELECT PIN, firstName, lastName, balance, cardNumber FROM [Client] WHERE Id=@ID", connection);
+                SqlCommand command = new SqlCommand("SELECT firstName, lastName, balance, FROM [Client] WHERE Id=@ID", connection);
                 command.Parameters.AddWithValue("@ID", id);
 
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
                     nameLabel.Content = (string)reader["firstName"] + " " + (string)reader["lastName"];
-                    pin = (string)reader["PIN"];
                     balanceLabel.Content = (decimal)reader["balance"];
                     IdLabel.Content = id;
                     cardNum = (string)reader["cardNumber"];
@@ -60,7 +58,7 @@ namespace ATMSW
             }
         }
 
-        private void hide()
+        private void hide() //metoda schová aktuálně nepotřebné prvky
         {
             withdrawButton.Visibility = Visibility.Hidden;
             balanceButton.Visibility = Visibility.Hidden;

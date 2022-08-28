@@ -26,7 +26,7 @@ namespace ATMSW
             e.Handled = regex.IsMatch(e.Text);
         }
 
-        private void Foo(object sender, ExecutedRoutedEventArgs e)
+        private void Foo(object sender, ExecutedRoutedEventArgs e) //zabraňuje uživateli do políčka cokoliv zkopírovaného vložit
         {
             e.Handled = true;
         }
@@ -41,7 +41,7 @@ namespace ATMSW
                 Login();
         }
 
-        private void Login()
+        private void Login() //metoda v případě zadání správných údajů přihlaší uživatele
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -76,7 +76,7 @@ namespace ATMSW
             }
 
         }
-        private void beep()
+        private void beep() //obě vstupní políčka vydávají zvuk při změně obsahu
         {
             SoundPlayer player = new SoundPlayer(Properties.Resources.atmBeep);
             player.Play();
