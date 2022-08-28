@@ -41,7 +41,7 @@ namespace ATMSW
                 Login();
         }
 
-        private void Login() //metoda v případě zadání správných údajů přihlaší uživatele
+        private void Login() //metoda v případě zadání správných údajů přihlásí uživatele
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
