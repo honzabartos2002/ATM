@@ -18,3 +18,7 @@ Klikněte pravým tlačítkem myši na AtmData.mdf a vyberte možnost "Close Con
 
 
 Nyní projekt můžete spustit, ale pokud by přece jen byl nějaký problém tak se můžete podívat na všechny funkce zde: https://www.youtube.com/watch?v=-0YBnBURwfw
+
+Přihlašovací údaje uložené v databázi
+1. číslo karty: 1234123412341234 Pin: 1234
+2. číslo karty: 4321 Pin: 4321
