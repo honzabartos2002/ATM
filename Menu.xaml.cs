@@ -43,7 +43,7 @@ namespace ATMSW
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand("SELECT firstName, lastName, balance, FROM [Client] WHERE Id=@ID", connection);
+                SqlCommand command = new SqlCommand("SELECT firstName, lastName, balance, cardNumber FROM [Client] WHERE Id=@ID", connection);
                 command.Parameters.AddWithValue("@ID", id);
 
                 SqlDataReader reader = command.ExecuteReader();
